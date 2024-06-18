@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delete Exam</title>
+    <style>
+        body {
+            background-image: url("https://images.jpg");
+            background-size: cover;
+            font-family: 'Arial', sans-serif; /* Add a font-family for better readability */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container label,
+        .container input[type="text"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: aqua;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #00bcd4; /* Change the hover background color */
+        }
+
+        center b {
+            color: red; /* Change the flash message color */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Delete Existing Exam</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <center>
+            <b>{{ messages[0] }}</b> <!-- Display only the first flashed message -->
+        </center>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/delete-exam">
+            <label for="examId">Subject Code:</label>
+            <input type="text" id="examId" name="examId" placeholder="Enter the Subject Code" required>
+
+            <input type="submit" value="Delete Exam">
+        </form>
+    </div>
+</body>
+
+</html>

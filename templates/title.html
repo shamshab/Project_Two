@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE EXAMINATION SYSTEM</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='title.css')}}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: rgb(31, 107, 107);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btnstyle {
+            background-color: rgb(31, 107, 107);
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btnstyle:hover {
+            background-color: rgb(15, 73, 73);
+        }
+
+        
+        .btnstyle:active {
+            transform: scale(0.95);
+        }
+
+        .btnstyle:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ONLINE EXAMINATION SYSTEM</h1>
+    </div>
+
+    <div class="container">
+        <a href="{{url_for('admin')}}"><button class="btnstyle">Admin</button></a>
+        <a href="{{url_for('user')}}"><button class="btnstyle">User</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Question</title>
+    <style>
+        body {
+            background-image: url("https://images.&w=1000&q=80");
+            background-size: cover;
+        }
+
+        .container {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group button {
+            padding: 8px 16px;
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Question</title>
+    <style>
+        body {
+            background-color: #f4f4f4; /* Add a background color for better contrast */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        textarea,
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="title">Create Question</h2>
+        <form action="{{ url_for('create_question', subject_code=subject_code) }}" method="POST">
+            <div class="form-group">
+                <label for="questionBody">Question Body</label>
+                <textarea id="questionBody" name="questionBody" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="option1">Option 1</label>
+                <input type="text" id="option1" name="option1" required>
+            </div>
+            <div class="form-group">
+                <label for="option2">Option 2</label>
+                <input type="text" id="option2" name="option2" required>
+            </div>
+            <div class="form-group">
+                <label for="option3">Option 3</label>
+                <input type="text" id="option3" name="option3" required>
+            </div>
+            <div class="form-group">
+                <label for="option4">Option 4</label>
+                <input type="text" id="option4" name="option4" required>
+            </div>
+            <div class="form-group">
+                <label for="correctOption">Correct Option</label>
+                <select id="correctOption" name="correctOption" required>
+                    <option value="" selected disabled>Select Correct Option</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="marks">Marks</label>
+                <input type="number" id="marks" name="marks" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Create Question</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+</html>
